@@ -1,0 +1,18 @@
+<p class="page_header">All engineers</p>
+
+
+<table>
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Department</th>
+    </tr>
+    #foreach($entry in $engineers)
+    <tr>
+        <td>$entry.getFirstName()</td>
+        <td>$entry.getLastName()</td>
+        <td>$entry.getDepartment().getTitle()</td>
+    </tr>
+    #end
+
+</table>
