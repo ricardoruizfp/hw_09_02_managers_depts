@@ -105,6 +105,20 @@ public class DBHelper {
 
     }
 
+    public static void update(Object object){
+        session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            transaction = session.beginTransaction();
+            session.update(object);
+            transaction.commit();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
+
     public static Manager findManagerForDept(Department department) {
         session = HibernateUtil.getSessionFactory().openSession();
         Criteria cr = session.createCriteria(Manager.class);

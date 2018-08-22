@@ -1,6 +1,3 @@
-
-<p class="pageHeader">All managers</p>
-
 <table>
     <tr>
         <th>First name</th>
@@ -10,7 +7,6 @@
         <th>Budget</th>
     </tr>
 
-    #foreach($manager in $managers)
     <tr>
         <td>$manager.getFirstName()</td>
         <td>$manager.getLastName()</td>
@@ -18,8 +14,6 @@
         <td>$manager.getDepartment().getTitle()</td>
         <td>$manager.getBudget()</td>
     </tr>
-    #end
+
 
 </table>
-
-<a href="/managers/new">Add manager</a>
